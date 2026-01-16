@@ -1,72 +1,92 @@
-# MorningValue
+# MorningValue: Torneo Galáctico
+
+Aplicación web interactiva donde distintas especies del universo compiten en combates galácticos.  
+El proyecto permite registrar especies, enfrentarlas en combates, visualizar resultados y generar un ranking global basado en desempeño.
+
+Diseño inspirado en una estética sci-fi / futurista (tipo Star Wars), con animaciones sutiles y una UI moderna.
+
+---
+
+## Features
+
+### Gestión de Especies
+
+- Registro de nuevas especies
+- Atributos:
+  - Nombre
+  - Nivel de poder (entero)
+  - Habilidad especial
+- Persistencia en memoria (estado volátil durante la sesión)
+
+### Combates
+
+- Selección manual de luchadores
+- Regla de combate:
+  - Gana la especie con **mayor nivel de poder**
+  - En caso de empate, gana por **orden alfabético**
+- Animación visual simple para simular el enfrentamiento
+- Registro automático de resultados (victorias / derrotas)
+
+### Ranking Galáctico
+
+- Ordenado por:
+  1. Número de victorias
+  2. Cantidad de poder
+
+---
+
+## Tecnologías usadas
+
+- **Angular** (Standalone Components)
+- **Angular Material (icons)**
+- **Tailwind CSS**
+- **TypeScript**
+- **Formly** para formularios dinámicos
+- **CSS Custom Properties** + efectos glow
+- Arquitectura modular y reusable
+- Node 20 LTS
+
+---
+
+## Instalación y uso
+
+Clona el repositorio:
+
+```bash
+git clone https://github.com/Carlosdrf/torneo-monorepo.git
+cd torneo-monorepo
+```
+
+--
+
+Instala dependencias:
+
+```bash
+npm install
+```
+
+Levanta frontend:
+
+````bash
+npm run serve-frontend
+```
+
+Backend:
+```bash
+npm run serve-backend
+```
+
+Ahora el frontend estará disponible en: `http://localhost:4200`
+
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+## NX - comandos útiles
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
-
-## Finish your remote caching setup
-
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/foLl7FtJuy)
-
-
-## Generate a library
-
-```sh
-npx nx g @nx/js:lib packages/pkg1 --publishable --importPath=@my-org/pkg1
+```bash
+nx serve <project>     # Ejecutar un proyecto
+nx build <project>     # Build de un proyecto
+nx graph               # Visualizar dependencias del monorepo
+nx reset               # Limpiar cache de Nx
 ```
-
-## Run tasks
-
-To build the library use:
-
-```sh
-npx nx build pkg1
-```
-
-To run any task with Nx use:
-
-```sh
-npx nx <target> <project-name>
-```
-
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
-
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Versioning and releasing
-
-To version and release the library use
-
-```
-npx nx release
-```
-
-Pass `--dry-run` to see what would happen without actually releasing the library.
-
-[Learn more about Nx release &raquo;](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Install Nx Console
-
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
-
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Useful links
-
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/nx-api/js?utm_source=nx_project&amp;utm_medium=readme&amp;utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog](https://nx.dev/blog?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+````

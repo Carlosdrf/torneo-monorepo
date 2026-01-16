@@ -2,7 +2,10 @@
   "name": "@morning-value/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "serve-frontend": "npx nx serve angular",
+    "serve-backend": "npx nx serve api"
+  },
   "private": true,
   "workspaces": [
     "packages/*"
