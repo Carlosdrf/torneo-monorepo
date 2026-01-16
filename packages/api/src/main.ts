@@ -6,7 +6,7 @@ import { CorsConfig } from './cors.config';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  const env = process.env.NODE_ENV ?? 'development';
+  const env = process.env.ENVIRONMENT ?? true;
   const key = env === 'prod' ? 'production' : 'local';
 
   console.log(key);
