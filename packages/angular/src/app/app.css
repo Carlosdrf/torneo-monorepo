@@ -1,0 +1,81 @@
+.warp-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.stars {
+  position: absolute;
+  inset: -50%;
+  background-image:
+    radial-gradient(
+      1px 1px at 10% 20%,
+      rgba(255, 255, 255, 0.9) 50%,
+      transparent 51%
+    ),
+    radial-gradient(
+      1px 1px at 30% 80%,
+      rgba(255, 255, 255, 0.6) 50%,
+      transparent 51%
+    ),
+    radial-gradient(
+      1px 1px at 70% 10%,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 51%
+    ),
+    radial-gradient(
+      1px 1px at 90% 60%,
+      rgba(255, 255, 255, 0.5) 50%,
+      transparent 51%
+    ),
+    radial-gradient(
+      1px 1px at 40% 40%,
+      rgba(255, 255, 255, 0.7) 50%,
+      transparent 51%
+    ),
+    radial-gradient(
+      1px 1px at 60% 70%,
+      rgba(255, 255, 255, 0.55) 50%,
+      transparent 51%
+    );
+  background-size: 200px 200px;
+  background-repeat: repeat;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.2));
+  transform-origin: 50% 50%;
+  opacity: 0.6;
+  animation: warp 2.8s linear infinite;
+}
+
+.stars-2 {
+  background-size: 140px 140px;
+  opacity: 0.45;
+  animation-duration: 2s;
+}
+
+.stars-3 {
+  background-size: 90px 90px;
+  opacity: 0.35;
+  animation-duration: 1.4s;
+}
+
+@keyframes warp {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.85);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.35);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stars {
+    animation: none;
+  }
+}

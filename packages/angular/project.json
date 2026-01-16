@@ -1,0 +1,80 @@
+{
+  "name": "angular",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "prefix": "app",
+  "sourceRoot": "packages/angular/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@angular/build:application",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/angular",
+        "browser": "packages/angular/src/main.ts",
+        "tsConfig": "packages/angular/tsconfig.app.json",
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "packages/angular/public"
+          }
+        ],
+        "styles": ["packages/angular/src/styles.css"]
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "4kb",
+              "maximumError": "8kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "optimization": false,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "fileReplacements": [
+            {
+              "replace": "packages/angular/src/environments/environment.ts",
+              "with": "packages/angular/src/environments/environment.dev.ts"
+            }
+          ]
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "continuous": true,
+      "executor": "@angular/build:dev-server",
+      "configurations": {
+        "production": {
+          "buildTarget": "angular:build:production"
+        },
+        "development": {
+          "buildTarget": "angular:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    },
+    "serve-static": {
+      "continuous": true,
+      "executor": "@nx/web:file-server",
+      "options": {
+        "buildTarget": "angular:build",
+        "staticFilePath": "dist/packages/angular/browser",
+        "spa": true
+      }
+    }
+  }
+}
