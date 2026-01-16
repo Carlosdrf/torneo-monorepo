@@ -7,7 +7,7 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   const env = process.env.NODE_ENV ?? 'development';
-  const key = env === 'production' ? 'production' : 'local';
+  const key = env === 'prod' ? 'production' : 'local';
 
   console.log(key);
 
