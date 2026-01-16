@@ -37,12 +37,14 @@ Diseño inspirado en una estética sci-fi / futurista (tipo Star Wars), con anim
 
 ## Tecnologías usadas
 
+- **NX** gestión de monorepo
 - **Angular** (Standalone Components)
 - **Angular Material (icons)**
 - **Tailwind CSS**
 - **TypeScript**
 - **Formly** para formularios dinámicos
 - **CSS Custom Properties** + efectos glow
+- **NestJs** backend
 - Arquitectura modular y reusable
 - Node 20 LTS
 
